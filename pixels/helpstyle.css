@@ -1,0 +1,14 @@
+#container{
+	width:980px;
+    clear: both;
+    margin: 0 auto;
+    padding:10px 10px 10px 10px;
+    background:rgb(255,255,255);
+	-moz-border-radius:12px;-webkit-border-radius:12px
+}
+body{
+	font:16px;text-shadow:0 0 1px rgba(0,0,0,0.01);
+	margin-top:20px;
+	background:rgba(100,100,100,0.9);
+	
+}
