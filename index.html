@@ -5,78 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <link rel="icon" type="image/png" href="static/header.png" />
 <title>Anil Shanbhag</title>
+
 <link href='http://fonts.googleapis.com/css?family=Artifika&v2' rel='stylesheet' type='text/css'>
-<style type='text/css'>
-#container {
-	padding-top:20px;
-	width: 860px;
-	clear: both;
-	margin: 0 auto;
-	font-family: 'Artifika', Georgia,sans-serif;	
-}
-#header {
-	width: 100%;
-	display: inline-block;
-	margin-bottom: 10px;
-}
-#main1 {
-	margin-bottom: 35px;
-	text-align:center;
-}
-#main2 {
-	height: 200px;
-	text-align:center;
-}
-#footer {
-	height: 100px;
-	font-size: 12px;
-	color: #666;
-	text-align:center;
-}
-#name{
-	width: 520px;
-	float: right;
-	text-align: right;
-	margin-right: 80px;
-	margin-top: 50px;
-	font-size: 32px;
-}
+<link rel="stylesheet" href="static/bootstrap.min.css">
 
-.note {
-	display: inline-block;
-	width: 200px;
-	margin: 15px;
-}
-.linkitem {
-	text-decoration: none;
-	color: #000;
-}
-.linkitem:hover {
-	color: #6D0D0D;
-}
-
-.alignright {
-	float: right;
-}
-
-p {
-	margin-top: -15px;
-	font-size:12px;
-	color: DarkGrey;
-}
-#content {
-	padding-left: 50px;
-	padding-right: 50px;
-}
-#content p, #content li {
-	color: rgb(102, 102, 102);
-	font-size: 14px;
-}
-#content img {
-	padding: 10px;
-}
-</style>
-      
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -88,90 +20,115 @@ p {
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-</script>	
+</script>
 </head>
 <!--
-                        __ 
+                        __
      _  _____   _______/  |_ ____________
   /\/ \ \__  \ /  ___/\   __/  __ \_  __ \
  /     \ / __ \\___ \  |  | \  ___/|  | \/
-/_/\ /\_(___  /____  > |__|  \___  >__|    
-            \/     \/            \/       
-             
-	yEAH ,  lookin at the source 
-	So yes enjoy yourself and if any doubt shoot me an email   
+/_/\ /\_(___  /____  > |__|  \___  >__|
+            \/     \/            \/
+
+	yEAH ,  lookin at the source
+	So yes enjoy yourself and if any doubt shoot me an email
 -->
 <body>
 
-<div id='container'>
-	<div id='header'>
-		<div style='float:left;'><img src='static/header.png'></div>
-        <div id='name'><h1 style="margin-bottom: 5px;">Anil Shanbhag</h1></div>
+<div class='container' style="width:800px;">
+	<div class="row">
+		<div class="col-md-12">
+			<div id='header'>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<img src='static/header.png' class="pull-left">
+						<h1 style="font-weight: bold;font-size:60px"><br/>Anil Shanbhag</h1>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div id='main1'>
-		<div class='note' style="width:230px;">
+	<div class="row">
+		<div class="col-md-12">
+			<p><br/></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 text-center">
 			<h3><a href='http://blog.anilshanbhag.in/' class='linkitem'>My Blog</a></h3>
-			<p>Research, Web &amp; math.random() stuff</p>
+			<h6>Research, Web &amp; math.random() stuff</h6>
 		</div>
-		<div class='note' style="width:250px;">
+		<div class="col-md-4 text-center">
 			<h3><a href='cv.pdf' class='linkitem' target='_blank'>Curriculum Vitae</a></h3>
-			<p>Life in a page</p>
+			<h6>Life in a page</h6>
 		</div>
-		<div class='note'>
+		<div class="col-md-4 text-center">
 			<h3><a href='https://github.com/anilshanbhag' class='linkitem'>My Code</a></h3>
-			<p>Python, Js and more to come</p>
+			<h6>Python, Js and more to come</h6>
 		</div>
 	</div>
-<div id="content">
-	<div id="intro">
-		<p><a href="http://blog.anilshanbhag.in/wp-content/uploads/2010/12/556124_3443316809513_1493799036_n.jpg"><img class="alignright" title="556124_3443316809513_1493799036_n" alt="" src="http://blog.anilshanbhag.in/wp-content/uploads/2010/12/556124_3443316809513_1493799036_n-150x150.jpg" width="150" height="150"></a>Myself Anil Shanbhag, final year undergrad in Computer Science Department at IIT Bombay. Love to think, build things, code, travel and my bed.</p><br/>
-		<p>The web is my playground. The scale of the web, the vast amount of data generated and making sense of this data excites me. I’m interested in Database Systems, Big Data Management and Data Mining/Machine Learning on the web.</p><br/>
-		<p>I have previously worked with <a title="Srikanth Kandula" href="http://research.microsoft.com/en-us/UM/people/srikanth/home.html" target="_blank">Srikanth Kandula</a> at Microsoft Research – Redmond, messing around with COSMOS and trying to see if approximation query techniques can be applied to big data queries. Currently I am working with <a href="www.cse.iitb.ac.in/~sudarsha/" target="_blank">Prof. Sudarshan</a> on improving join enumeration in transformation-based query optimisers.</p>
-	</div>
-	<div id="education">
-		<h2>Education</h2>
-		<p>Currently final year student at <strong>IIT Bombay</strong> pursuing Bachelors degree (B.Tech.) with Major in Computer Science and Engineering with Honors and Minor in Applied Statistics and Information. <br/> CPI: 9.54 / 10, Graduating in May 2014. Courses undertaken :</p><br/>
-		<p>Electives:</p>
-		<ul><li>Information Retrieval &amp; Mining for Hypertext &amp; the Web</li><li>Graph Theory</li><li>Convex Optimization</li><li>Functional Programming</li><li>Linear Optimization</li><li>Foundations of Machine Learning</li><li>Program Analysis</li><li>Program Derivation</li></ul><br/>
-		<p>Selected Core Courses:</p>
-		<ul><li>Abstractions and Paradigms (+Lab)</li><li>Datastructures and Algorithms (+Lab)</li><li>Discrete Structures</li><li>Automata Theory and Logic</li><li>Design and Analysis of Algorithms</li><li>Database and Information Systems (+ Lab)</li><li>Computer Networks (+ Lab)</li><li>Computer Architecture (+Lab)</li><li>Artificial Intelligence (+Lab)</li><li>Operating Systems (+Lab)</li><li>Implementation of Programming Languages (+Lab)</li></ul><br/>
-		<p>Minor Courses:</p>
-		<ul><li>Applied Stochastic Process</li><li>Statistical Inference</li><li>Introduction to Derivative Pricing</li><li>Introduction to Probability Theory</li></ul>
-	</div>
-	<div id="projects">
-		<h2>Projects/ Awards/ Internships</h2>
-		<p>You can have a look at my <a href="http://anilshanbhag.in/cv.pdf">Curriculum Vitae</a> which contains a detailed description of the various projects undertaken by me over the course of bachelors degree.</p> 
-	</div>
-	<div id="enterpreunership">
-		<h2>Enterpreunership</h2>
-		<p>My long term career goal is to have my own tech startup solving some challenging problems related to big data management and web outreach. Being in India where a ever growing population is slowly adopting the web, I see a great opportunity. My attempts so far :-</p>
-		<h4>Recharge123</h4>
-		<p>During my sophomore year, I joined Recharge123 as a Lead Developer. Every merchant who does mobile top-up maintains seperate balance with each provider (like Vodafone, Tata, etc). We tried to change that by making Recharge123, a B2B solution for giving merchants a unified recharge portal. Our user-friendly interface clicked and had a turnover of Rs. 10 million in first year of operations. However giving the abmysically low margins, we sold off the startup to a larger player for a decent sum :-)</p>
-		<div id="peapod">
-		<h4>PeaPod</h4>
-		<img class="alignright" src="static/peapod_team.jpg" alt="PeaPod Team" style="width: 200px; display: inline-block; margin-top: -15px;" />
-		<p>In the later part of my third year, I along with Ashwin Parajape, Adwait Dongare and later Palash Agarwal started working on PeaPod, which essentially borrows from the technology behind Raspberry Pi, but has more powerful hardware which transforms it from a hobbyist platform to a low-cost consumer grade PC. It was specifically tailored for Indian hinterland which has 60% penetration of mobile phones and TVs and just needed a processor to connect the two. We got a prototype working and reached the finals of Eureka! Business Plan Competition in IIT Bombay. The idea however didn’t pan out because we soon realized we needed more experience in hardware design and marketing.</p>
-		</div>
-		<div id="dictanote">
-		<h4>Dictanote</h4>
-		<p>Dictanote is mini MS-Word (technically called WYSIWYG editor) with <a href="https://dictanote.co">multi-language speech recognizer for chrome</a>. It started out as a hobby project but now has around 75,000+ users, averages around 1.5k pageviews per day and $700 revenue per month. You can try it out <a href="https://dictanote.co">dictanote.co</a> or install the <a href="https://chrome.google.com/webstore/detail/dictanote-speech-recogniz/aomjekmpappghadlogpigifkghlmebjk">Dictanote chrome app</a>.
-		</div>
-		<div id="webbify">
-		<h4>Webbify</h4>
-		<p>
-		We (Ashwin Parajape and Myself) found that developing a website is a very mechanical task and making it look good torturous. Even with the latest frameworks like bootstrap it takes some time and effort even for a CS undergrad to make a good looking website. We thought of abstracting this process out and started making Webbify (yes this website was built using it). Right now it is the first iteration and we have thought of many customization features. Currently we know the feasibility of possible features are in the process of gauging market potential. Stay tuned ...</p>
+	<div class="row">
+		<div class="col-md-12">
+			<p><br/></p>
 		</div>
 	</div>
-	<div id="contact">
-		<h2>Contact Me</h2>
-		<p>The best way to contact me is to send mail to anilashanbhag[at]gmail[dot]com</p>
-		<p>Other: <a href="https://github.com/anilshanbhag">Github</a> <a href="https://www.facebook.com/anilashanbhag">Facebook</a> <a href="http://blog.anilshanbhag.in/about/">Blog</a></p><br/><br/><br/>
+	<div class="row">
+		<div class="col-md-12">
+			<div id="content">
+				<div id="intro">
+					<p><a href="http://blog.anilshanbhag.in/wp-content/uploads/2010/12/556124_3443316809513_1493799036_n.jpg"><img class="pull-right" title="556124_3443316809513_1493799036_n" alt="" src="http://blog.anilshanbhag.in/wp-content/uploads/2010/12/556124_3443316809513_1493799036_n-150x150.jpg" width="150" height="150"></a>Myself Anil Shanbhag, final year undergrad in Computer Science Department at IIT Bombay. Love to think, build things, code, travel and my bed.</p>
+					<p>The web is my playground. The scale of the web, the vast amount of data generated and making sense of this data excites me. I’m interested in Database Systems, Big Data Management and Data Mining/Machine Learning on the web.</p>
+					<p>I have previously worked with <a title="Srikanth Kandula" href="http://research.microsoft.com/en-us/UM/people/srikanth/home.html" target="_blank">Srikanth Kandula</a> at Microsoft Research – Redmond, messing around with COSMOS and trying to see if approximation query techniques can be applied to big data queries. Currently I am working with <a href="www.cse.iitb.ac.in/~sudarsha/" target="_blank">Prof. Sudarshan</a> on improving join enumeration in transformation-based query optimisers.</p>
+				</div>
+				<div id="education">
+					<h2>Education</h2>
+					<p>Currently final year student at <strong>IIT Bombay</strong> pursuing Bachelors degree (B.Tech.) with Major in Computer Science and Engineering with Honors and Minor in Applied Statistics and Information. <br> CPI: 9.54 / 10, Graduating in May 2014. Courses undertaken :</p>
+					<p>Electives:</p>
+					<ul><li>Advanced Database Systems</li><li>Information Retrieval &amp; Mining for Hypertext &amp; the Web</li><li>Graph Theory</li><li>Convex Optimization</li><li>Functional Programming</li><li>Linear Optimization</li><li>Foundations of Machine Learning</li><li>Program Analysis</li><li>Program Derivation</li></ul>
+					<p>Selected Core Courses:</p>
+					<ul><li>Abstractions and Paradigms (+Lab)</li><li>Datastructures and Algorithms (+Lab)</li><li>Discrete Structures</li><li>Automata Theory and Logic</li><li>Design and Analysis of Algorithms</li><li>Database and Information Systems (+ Lab)</li><li>Computer Networks (+ Lab)</li><li>Computer Architecture (+Lab)</li><li>Artificial Intelligence (+Lab)</li><li>Operating Systems (+Lab)</li><li>Implementation of Programming Languages (+Lab)</li></ul>
+					<p>Minor Courses:</p>
+					<ul><li>Applied Stochastic Process</li><li>Statistical Inference</li><li>Introduction to Derivative Pricing</li><li>Introduction to Probability Theory</li></ul>
+				</div>
+				<div id="projects">
+					<h2>Projects/ Awards/ Internships</h2>
+					<p>You can have a look at my <a href="http://anilshanbhag.in/cv.pdf">Curriculum Vitae</a> which contains a detailed description of the various projects undertaken by me over the course of bachelors degree.</p>
+				</div>
+				<div id="enterpreunership">
+					<h2>Enterpreunership</h2>
+					<p>My long term career goal is to have my own tech startup solving some challenging problems related to big data management and web outreach. Being in India where a ever growing population is slowly adopting the web, I see a great opportunity. My attempts so far :-</p>
+					<h4>Recharge123</h4>
+					<p>During my sophomore year, I joined Recharge123 as a Lead Developer. Every merchant who does mobile top-up maintains seperate balance with each provider (like Vodafone, Tata, etc). We tried to change that by making Recharge123, a B2B solution for giving merchants a unified recharge portal. Our user-friendly interface clicked and had a turnover of Rs. 10 million in first year of operations. However giving the abmysically low margins, we sold off the startup to a larger player for a decent sum :-)</p>
+					<div id="peapod">
+					<h4>PeaPod</h4>
+					<img class="pull-right" src="static/peapod_team.jpg" alt="PeaPod Team" style="width: 200px; display: inline-block; margin-top: -15px;" />
+					<p>In the later part of my third year, I along with Ashwin Parajape, Adwait Dongare and later Palash Agarwal started working on PeaPod, which essentially borrows from the technology behind Raspberry Pi, but has more powerful hardware which transforms it from a hobbyist platform to a low-cost consumer grade PC. It was specifically tailored for Indian hinterland which has 60% penetration of mobile phones and TVs and just needed a processor to connect the two. We got a prototype working and reached the finals of Eureka! Business Plan Competition in IIT Bombay. The idea however didn’t pan out because we soon realized we needed more experience in hardware design and marketing.</p>
+					</div>
+					<div id="dictanote">
+					<h4>Dictanote</h4>
+					<p>Dictanote is mini MS-Word (technically called WYSIWYG editor) with <a href="https://dictanote.co">multi-language speech recognizer for chrome</a>. It started out as a hobby project but now has around 75,000+ users, averages around 1.5k pageviews per day and $700 revenue per month. You can try it out <a href="https://dictanote.co">dictanote.co</a> or install the <a href="https://chrome.google.com/webstore/detail/dictanote-speech-recogniz/aomjekmpappghadlogpigifkghlmebjk">Dictanote chrome app</a>.
+					</div>
+					<div id="webbify">
+					<h4>Webbify</h4>
+					<p>
+					We (Ashwin Parajape and Myself) found that developing a website is a very mechanical task and making it look good torturous. Even with the latest frameworks like bootstrap it takes some time and effort even for a CS undergrad to make a good looking website. We thought of abstracting this process out and started making Webbify (yes this website was built using it). Right now it is the first iteration and we have thought of many customization features. Currently we know the feasibility of possible features are in the process of gauging market potential. Stay tuned ...</p>
+					</div>
+				</div>
+				<div id="contact">
+					<h2>Contact Me</h2>
+					<p>The best way to contact me is to send mail to anilashanbhag[at]gmail[dot]com
+					<br/>Other: <a href="https://github.com/anilshanbhag">Github</a> <a href="https://www.facebook.com/anilashanbhag">Facebook</a> <a href="http://blog.anilshanbhag.in/about/">Blog</a></p>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-
-	<div id='footer'>
-		Created using good old vim, <a href='http://www.google.com/webfonts' class='linkitem' target='_blank'>google webfonts</a> and hosted on <a href='http://azure.com' class='linkitem' target='_blank'>Azure</a>.
-        <br>Lazily mirrored at <a href="http://www.cse.iitb.ac.in/~anil/">IITB</a>. This one is usually up-to-date.
+	<div class="row">
+		<div class="col-md-12">
+			<div id='footer' class="text-center">
+				<br/><br/>Yay! This website is created using and hosted on <a href="http://webbify.in">Webbify</a> <br/>(Which in turn was created by me {see section on Webbify above})<br/><strike>Created using good old vim, <a href='http://www.google.com/webfonts' class='linkitem' target='_blank'>google webfonts</a> and hosted on <a href='http://azure.com' class='linkitem' target='_blank'>Azure</a></strike><br/>
+		        Lazily mirrored at <a href="http://www.cse.iitb.ac.in/~anil/">IITB</a>. This one is usually up-to-date.<br/></br/>
+			</div>
+		</div>
 	</div>
 </div>
 
