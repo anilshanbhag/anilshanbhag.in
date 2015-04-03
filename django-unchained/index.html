@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Django Unchained</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+      body {
+        font-family: 'Droid Serif';
+        font-size: 20px;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      h1 { font-size: 4em; }
+      h2 { font-size: 2em; }
+      h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source" style="display: none;">
+
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+
+# Django Unchained
+
+Anil Shanbhag
+.footnote[Grab the source code on [github](https://github.com/anilshanbhag/DjangoUnchained/)]
+
+---
+
+## What is Django and why should I be using it?
+
+---
+
+layout: false
+
+## What is Django and why should I be using it?
+
+- A Web Development Framework designed to increase productivity by automating repetitive tasks
+
+- Django provides high-level abstractions of common patterns, shortcuts for frequent programming tasks
+
+Who uses it ?
+
+![Django Users](users.png)
+
+---
+
+template: inverse
+
+# Installation
+
+---
+
+layout: false
+.left-column[
+  ## Installation
+ ### - Download packages
+]
+.right-column[
+All these instructions are specific to Ubuntu with python 2.7.
+
+Download the required packages from apt
+
+```
+sudo apt-get install sqlite3 libsqlite3-dev python-virtualenv
+```
+]
+
+---
+
+layout: false
+.left-column[
+  ## Installation
+ ### - Download packages
+ ### - Setup Environment
+]
+.right-column[
+Try to keep the same folder names, else you might have trouble later
+
+```
+virtualenv gen2048
+cd gen2048
+source bin/activate
+```
+
+Your should see (gen2048) at the start of the command line. Now
+
+```
+pip install django==1.6
+djangoadmin.py startproject gen2048
+```
+]
+
+---
+
+layout: false
+.left-column[
+  ## Installation
+ ### - Download packages
+ ### - Setup Environment
+ ### - All Set
+]
+.right-column[
+Just see if you have done everything correctly
+
+```
+cd gen2048
+python manage.py runserver
+```
+
+If you see a welcome page, you have done it all right
+
+![Congrats](congrats.png)
+]
+
+---
+template: inverse
+
+# Bird's eye view
+## What are we going to do today ?
+
+---
+
+# Let's hit the road
+## Step 1: Configure database and login
+
+---
+layout: false
+# Peek into settings.py
+
+Lets update a few settings so that we can deep dive
+
+Add gen2048 into installed apps
+```
+INSTALLED_APPS = (
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'gen2048'
+)
+```
+
+Now create the necessary tables
+```
+./manage.py syncdb
+```
+
+---
+# Enable the admin
+
+Open urls.py file, ensure that 'admin/' url is not commented
+
+Now start the django development server again
+```
+python manage.py runserver
+```
+
+---
+template: inverse
+# Checkpoint 1
+# Check login
+
+---
+layout: false
+## Object Relational Mapping (ORM)
+
+- In modern Web applications, the arbitrary logic often involves interacting with a database.
+
+- Amazon.com, for instance, is a great example of a database-driven site. Each product page is essentially a query into Amazon’s product database formatted as HTML, and when you post a customer review, it gets inserted into the database of reviews.
+
+- Dumb way : hardcode SQL : `SELECT name FROM books ORDER BY name`
+
+- Django way : ORM : `books = Book.objects.order_by('name')`
+
+---
+## Create your first model
+
+In the folder containing urls.py and settings.py, create a new file models.py. Fill it with this:
+
+```
+from django.db import models
+from django.contrib.auth.models import User
+
+class Game(models.Model):
+    owner = models.ForeignKey(User)
+    url = models.CharField(max_length=40, unique = True)
+    name = models.CharField(max_length=40)
+    desc = models.TextField()
+    tile2 = models.FileField(upload_to='tiles')
+    tile4 = models.FileField(upload_to='tiles')
+    tile8 = models.FileField(upload_to='tiles')
+    tile16 = models.FileField(upload_to='tiles')
+    tile32 = models.FileField(upload_to='tiles')
+    tile64 = models.FileField(upload_to='tiles')
+    tile128 = models.FileField(upload_to='tiles')
+    tile256 = models.FileField(upload_to='tiles')
+    tile512 = models.FileField(upload_to='tiles')
+    tile1024 = models.FileField(upload_to='tiles')
+    tile2048 = models.FileField(upload_to='tiles')
+
+    def __unicode__(self):
+        return self.name
+```
+
+---
+## Create your first view
+
+A view is used to handle HTTP Request. A view gets a HTTP request and returns a HTTP response.
+
+Let's setup the setup page for our game.
+
+```
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from django.http import HttpResponseRedirect
+
+def home(request):
+    if request.user.is_authenticated():
+        ctx = {}
+        return render_to_response('setup.html', RequestContext(request,ctx))
+    else:
+        return HttpResponseRedirect('/admin/')
+
+```
+
+---
+# Templates
+
+Naive way to generate html response
+
+```
+html = "<html><body>It is now %s.</body></html>" % now
+return HttpResponse(html)
+```
+
+Django way
+
+```
+content.html
+<html>
+  <body>It is now {{ now }}</body>
+</html>
+
+views.py
+return render_to_response('content.html', {'now': now});
+```
+
+- Templates allow a clear a segregation of the HTML from the application logic.
+- Usually different people might work on the two parts
+- Imagine templates as HTML extended with basic python constructs
+
+---
+## Create your first template
+
+Create a new folder `templates` and a new file 'setup.html'
+Your directory structure should be:
+
+```
+gen2048
+  urls.py
+  templates/
+    setup.html
+```
+
+Copy the contents from setup.html file from the folder checkpoint 2
+
+---
+# Putting it all together
+
+Open `urls.py` and add the following line
+
+```
+url(r'^$', 'gen2048.views.home', name='home'),
+```
+
+Finally urls.py should look like this:
+
+```
+urlpatterns = patterns('',
+    url(r'^$', 'gen2048.views.home', name='home'),
+    url(r'^admin/', include(admin.site.urls)),
+)
+```
+
+---
+# Let's go for it
+
+Copy the `static` directory to `gen2048/static`
+
+Add one line into settings.py (just below BASE_DIR)
+```
+STATIC_ROOT = os.path.join( BASE_DIR, 'gen2048', 'static' )
+MEDIA_ROOT = os.path.join( STATIC_ROOT, 'media' )
+```
+
+You need to sync the database again since you created a new model
+```
+python manage.py syncdb
+```
+
+Start the server
+```
+python manage.py runserver
+```
+
+---
+template: inverse
+# Checkpoint 2
+# Basic Setup Done
+
+---
+## Create your first form
+
+- Forms are used to get input from user.
+- In this case we need the user to url, title, description and all the tiles images.
+- All of these come from Game model
+- Django allows you to auto-generate forms and handle saving of form response
+
+Add the following into views.py
+
+```
+from django.forms import ModelForm
+from gen2048.models import Game
+
+class GameForm(ModelForm):
+    class Meta:
+        model = Game
+        exclude = ['owner']
+```
+
+---
+## Extend the home view
+
+Now that we have a form, let's actually use it to get user input
+
+Copy the views.py file from Checkpoint 3 into your views.py if you feel lazy
+
+```
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from django.http import HttpResponseRedirect, HttpResponse, Http404
+
+## GameForm code is present here
+
+def home(request):
+    if request.user.is_authenticated():
+        if request.method == 'POST':
+            f = GameForm(request.POST, request.FILES)
+            if f.is_valid():
+                game = f.save(commit=False)
+                game.owner = request.user
+                game.save()
+                return HttpResponseRedirect('/' + game.url)
+            else:
+                ctx = {'form': f}
+                return render_to_response('setup.html', RequestContext(request,ctx))
+        else:
+            form = GameForm()
+            ctx = {'form': form}
+            return render_to_response('setup.html', RequestContext(request,ctx))
+    else:
+        return HttpResponseRedirect('/admin/')
+```
+
+---
+## Show the form in template
+
+In the place where you see `<!-- Add Form Here -->`, insert the code below
+
+```
+<form action="/" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form }}
+<input class='btn btn-primary' type="submit" value="Submit" />
+</form>
+```
+
+- `{{ form }}` renders the django form as HTML
+- You may ignore the csrf_token, it is a built-in security mechanism to prevent cross-site request forgery
+
+---
+# All set
+
+The usual goal, do
+
+```
+python manage.py runserver
+```
+
+- And go to localhost:8000, you should see the input form.
+- I have given some sample images in the `static/` folder. These are from the GetIITB game. Submit the form once.
+
+---
+template: inverse
+# Checkpoint 3
+# Game Setup Done
+
+---
+# Let's show the game
+
+- Till now, we have built the things necessary to get user input of game
+- In this chapter, we will see how to show the game
+
+---
+# Configure urls
+
+- URLs can be regular expressions
+- Each game has a url attribute, we want the game to show up at `localhost:8000/url`
+
+Add dynamic url pattern into urlpatterns
+```
+url(r'^(?P<url>\w+)/$', 'gen2048.views.game', name='game'),
+```
+
+Your urls.py should look like:
+
+```
+urlpatterns = patterns('',
+    url(r'^$', 'gen2048.views.home', name='home'),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^(?P<url>\w+)/$', 'gen2048.views.game', name='game'),
+)
+```
+
+---
+# Configure View
+
+Let's actually create the game view which is linked with the dynamic url
+
+```
+def game(request, url):
+    try:
+        game = Game.objects.get(url = url)
+        ctx = {'game': game}
+        return render_to_response('index.html', RequestContext(request,ctx))
+    except Game.DoesNotExist:
+        return HttpResponseRedirect('/')
+```
+
+- Try to get the game object
+- If it does not exist, redirect to 'localhost:8000'
+- Else show the game
+
+Next we create the `index.html` file
+
+---
+# Creating the game html
+
+- The game html actually comes from the original game
+- Each box has an associated class
+- Each class can be associated with a background image
+
+Copy the `index.html` file from checkpoint 4 folder
+
+Here is an example of class for tile 2
+```
+.tile.tile-2 .tile-inner {
+  background: #fff url('{{ game.tile2.url }}');
+}
+```
+
+- We passed the `game` attribute which is an instance of `Game` model.
+- `game` contains a `tile2` attribute which is `FileField`
+- `game.tile2.url` gives the url to the file
+- We do similar thing for all tiles from `tile4` to `tile2048`
+
+---
+# Let's play 2048
+
+The usual goal, do
+
+```
+python manage.py runserver
+```
+
+And go to localhost:8000/<game-url>, game-url is the url you set for the game when you submitted the form
+
+---
+template: inverse
+# Checkpoint 4
+# Basic 2048 Game Creator Ready
+
+---
+template: inverse
+# Checkpoint 4
+# Basic 2048 Game Creator Ready
+
+---
+# Let's do google authentication
+
+Go to [Google API Console](https://code.google.com/apis/console/)
+
+It by default creates a new project for you
+
+Go to API & Auth > Credentials, Click on 'Create New Client ID'
+
+```
+Web Application
+Authorized Javascript Origin http://localhost
+Authorized Redirect URI:  http://localhost/accounts/google/login/callback/
+```
+
+If you feel lazy, you can just skip this. I will give you one.
+
+---
+# Install & Setup django-allauth
+
+Stop the python server we started previously, lets install a few packages to make life easy
+
+```
+pip install django-allauth
+```
+---
+# Read the docs
+
+Open the github page and follow the Installation section: [link](https://github.com/pennersr/django-allauth)
+
+---
+template: inverse
+# Somethings are best explored on your own
+# That's all for today
+## Hope you enjoyed the talk
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-0.6.0.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
